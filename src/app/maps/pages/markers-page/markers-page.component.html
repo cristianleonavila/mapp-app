@@ -1,0 +1,13 @@
+<div class="map" #markers></div>
+<button class="btn btn-primary fixed-bottom-right" (click)="createMarker()">
+    + Agregar marcador
+</button>
+<ul class="list-group fixed-marker-list">
+    <li class="list-group-item" 
+        *ngFor="let markerObj of markerList"
+        [ngStyle]="{'backgroundColor': markerObj.color, 'font-weight': 'bolder'}"
+        (click)="flyTo(markerObj.marker)">
+        Marcador {{ markerObj.index + 1 }}
+        <span (click)="deleteMarker(markerObj.index)" class="marker-close">&times;</span>
+    </li>
+</ul>

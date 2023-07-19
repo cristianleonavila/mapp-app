@@ -1,0 +1,28 @@
+.map {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fixed-bottom-right {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+}
+
+.fixed-marker-list {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+}
+
+.marker-close {
+    cursor: pointer; 
+    font-weight: bolder; 
+    color: white; 
+    background-color: gray;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 5px;
+}
