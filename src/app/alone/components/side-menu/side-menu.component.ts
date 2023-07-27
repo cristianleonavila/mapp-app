@@ -1,7 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MenuItem } from '../interfaces/menu-item';
+import { RouterModule } from '@angular/router';
+import { MenuItem } from 'src/app/maps/components/interfaces/menu-item';
+
 
 @Component({
+  standalone: true,
+  imports: [
+    CommonModule, RouterModule
+  ],
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.css']

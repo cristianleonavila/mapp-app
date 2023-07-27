@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MapsRoutingModule } from './maps-routing.module';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MiniMapComponent } from './components/mini-map/mini-map.component';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
 import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-page.component';
 import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
-
+import { environment } from '../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
-(mapboxgl as any).accessToken = 'pk.eyJ1IjoiY3Jpc3RpYW4tbGVvbi1hdmlsYSIsImEiOiJjbGszY2d0MzQwNXBmM2NwOHdhcDZpdGhtIn0.lVJ81VY7fWpfuNTwKo5zqg';
+import { CounterComponent } from '../alone/components/counter/counter.component';
+import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
+(mapboxgl as any).accessToken = environment.mapbox_key;
 
 @NgModule({
   declarations: [
     MiniMapComponent,
-    SideMenuComponent,
     MapsLayoutComponent,
     FullScreenPageComponent,
     MarkersPageComponent,
@@ -25,7 +25,9 @@ import * as mapboxgl from 'mapbox-gl';
   ],
   imports: [
     CommonModule,
-    MapsRoutingModule
+    MapsRoutingModule,
+    CounterComponent,
+    SideMenuComponent
   ]
 })
 export class MapsModule { }
